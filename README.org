@@ -1,6 +1,6 @@
 * NEXT RExercise
 :LOGBOOK:  
-CLOCK: [2015-04-23 Thu 19:32]
+CLOCK: [2015-04-23 Thu 19:32]--[2015-04-23 Thu 20:22] =>  0:50
 CLOCK: [2015-04-23 Thu 12:11]--[2015-04-23 Thu 14:31] =>  2:20
 CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
 :END:      
@@ -63,5 +63,10 @@ devtools::install_github("yitang/rexercise")
 *download GPX data*
 
 *set working idrecotry and app* 
+#+begin_src R
+all.data <-Parse_GPX_all(data.dir = "~/git/R/ActivityDashboard/ExerciseData/Strave/",
+                         app = "Strava",
+                         add.city = TRUE) 
+#+end_src
 
 
