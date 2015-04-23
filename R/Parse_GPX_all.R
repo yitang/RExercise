@@ -1,5 +1,14 @@
+##' Parse GPX file 
+##'
+##' A warpper function for Parse_GPX. 
+##' @title 
+##' @param data.dir a folder that contains GPX files 
+##' @param app RunKeeper, Strave or others?
+##' @param add.city add city and country 
+##' @return a list 
+##' @export 
+##' @author Yi Tang
 Parse_GPX_all <- function(data.dir = NULL, app = "Strava", add.city = TRUE)  {
-    ## data.dir <- "ExerciseData/Strave"
     if (!is.null(data.dir))
         setwd(data.dir)
     data.files <- list.files(pattern = "gpx$")
@@ -34,17 +43,3 @@ Parse_GPX_all <- function(data.dir = NULL, app = "Strava", add.city = TRUE)  {
     }
     list(location, summary)
 }
-
-
-
-## cities <- lapply(location, function(x) {
-##            lonlat <- x[1, c(lon, lat)]
-##            loc.info <- revgeocode(lonlat, output = "more")
-##            c(as.character(loc.info$locality), as.character(loc.info$country))
-##        })
-## cities <- do.call(rbind, cities)
-## summary[, city := cities[, 1]]
-## summary[, country := cities[, 2]]
-
-## data <- list(location,
-##                  summary)
