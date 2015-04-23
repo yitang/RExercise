@@ -1,7 +1,6 @@
 ##' Parse GPX file 
 ##'
 ##' A warpper function for Parse_GPX. 
-##' @title 
 ##' @param data.dir a folder that contains GPX files 
 ##' @param app RunKeeper, Strave or others?
 ##' @param add.city add city and country 

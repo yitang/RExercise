@@ -2,6 +2,7 @@
 
 export(GCD_pairs)
 export(Parse_GPX)
+export(Parse_GPX_all)
 export(remove.na)
 import(data.table)
 import(ggmap)
