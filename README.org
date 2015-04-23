@@ -1,0 +1,67 @@
+* NEXT RExercise
+:LOGBOOK:  
+CLOCK: [2015-04-23 Thu 19:32]
+CLOCK: [2015-04-23 Thu 12:11]--[2015-04-23 Thu 14:31] =>  2:20
+CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
+:END:      
+[2015-04-23 Thu 11:53]
+
+** Welcome! 
+RExercise is a by-product of the Shiny ActivityDashboard. It parse your exercise data in =.GPX= format and for each workout, it returns 
+- location table :: a =data.frame= with longitude, latitude, elevation at a particular recording time,
+- summary table :: a one-row =data.frame= of summary statistics about the workout, includes duration, distance, speed etc. 
+
+It comes with a helper function to do the batch process and combine all =data.frame= together, also add /city/ and /country/ to the summary tables.  Then you can see all the activities summary in one table, and use it to query both location and summary table, for example, how many miles I run last year? How many cities I had run? and free you are great, done a lot achievement. 
+
+Currently it supports data from [[http://runkeeper.com/][RunKeeper]] and [[https://www.strava.com/dashboard][Strava]] perfectly.  =.GPX= format is generic data format so applying RExercise to data from other apps shuodn't be a problem.  If you do, please feel free to contact me, I am extermely friendly to people who do exercise (:d), or sent me a pull request if you already figure out. 
+
+** Demo 
+
+suppose you have those =.GPX= data files, 
+#+begin_example
+20150108-170830-Run.gpx 
+20150109-171835-Run.gpx 
+20150111-113750-Run.gpx 
+20150112-171906-Walk.gpx
+#+end_example
+
+=RExercise= will gives you
+#+begin_center
+*A Summary Table*
+#+end_center
+
+#+caption: A Summary Table 
+|              id | activity |       date | start.time | name       | duration (h) | distance (km) | speed (km/h) | elevation (m) | climb (m) |
+|-----------------+----------+------------+------------+------------+--------------+---------------+--------------+---------------+-----------|
+| 20150108-170830 | Run      | 2015-01-08 |   17:08:14 | Afternoon  |         0.13 |          0.74 |          5.4 |         109.0 |      11.1 |
+| 20150109-171835 | Run      | 2015-01-09 |   17:18:14 | after work |         0.42 |          3.33 |          7.9 |         110.5 |      60.1 |
+| 20150111-113750 | Run      | 2015-01-11 |   11:37:14 | Sunday     |         0.50 |          4.25 |          8.4 |         130.6 |     136.6 |
+| 20150112-171906 | Run      | 2015-01-12 |   17:19:14 | after work |         0.51 |          4.08 |          7.9 |         110.4 |      88.6 |
+
+#+begin_center
+*A Location Table*
+#+end_center
+#+caption: A Location Table
+|       lon |       lat |   ele | time                |
+|-----------+-----------+-------+---------------------|
+| -2.019050 | 53.961909 | 108.4 | 2015-01-11 11:37:50 |
+| -2.017989 | 53.961375 | 109.8 | 2015-01-11 11:38:27 |
+| -2.018019 | 53.961427 | 109.8 | 2015-01-11 11:38:29 |
+| -2.018004 | 53.961536 | 109.8 | 2015-01-11 11:38:30 |
+| -2.018189 | 53.962276 | 110.4 | 2015-01-11 11:38:33 |
+| -2.018141 | 53.962277 | 110.4 | 2015-01-11 11:38:34 |
+| -2.018090 | 53.962276 | 110.4 | 2015-01-11 11:38:35 |
+
+
+** How to use it.
+
+*install* 
+#+begin_src R
+devtools::install_github("yitang/rexercise")
+#+end_src
+
+*download GPX data*
+
+*set working idrecotry and app* 
+
+
