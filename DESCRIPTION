@@ -1,9 +1,10 @@
 Package: RExercise
 Type: Package
-Title: What the package does (short line)
+Title: It parse your workout data in =.GPX= format from popular exercise apps. 
 Version: 1.0
 Date: 2015-04-23
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Yi Tang 
+Maintainer: Yi Tang <yi.tang.uk@me.com>
+Description: It parse your exercise data in =.GPX= format and for each workout, it returns a =data.frame= with longitude, latitude, elevation at a particular recording time and a one-row =data.frame= of summary statistics about the workout, includes duration, distance, speed etc.  It comes with a helper function to do the batch process and combine all =data.frame= together, also add /city/ and /country/ to the summary tables.  Then you can see all the activities summary in one table, and use it to query both location and summary table, for example, how many miles I run last year? How many cities I had run? and free you are great, done a lot achievement.
+License: rice
+Imports: ggmap, data.table, plotKML, sp

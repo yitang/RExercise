@@ -3,3 +3,7 @@
 export(GCD_pairs)
 export(Parse_GPX)
 export(remove.na)
+import(data.table)
+import(ggmap)
+import(plotKML)
+import(sp)
