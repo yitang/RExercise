@@ -7,17 +7,17 @@ CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
 :END:      
 
 ** Welcome! 
-RExercise is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parse your exercise data in =.GPX= format and for each workout, it returns 
+RExercise is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parses your exercise data in =.GPX= format and for each workout, it returns 
 - location table :: a =data.frame= with longitude, latitude, elevation at a particular recording time,
 - summary table :: a one-row =data.frame= of summary statistics about the workout, includes duration, distance, speed etc. 
 
-It comes with a helper function to do the batch process and combine all =data.frame= together, also add /city/ and /country/ to the summary tables.  Then you can see all the activities summary in one table, and use it to query both location and summary table, for example, how many miles I run last year? How many cities I had run? and free you are great, done a lot achievement. 
+It comes with a helper function =Parse_GPX_all= to do the batch process and combine all =data.frame= together, also add /city/ and /country/ to the summary tables.  Then you can see all the activities summary in one table, and use it to query both *location* and *summary* table, for example, how many miles did you run last year? How many cities had you run? It meant to make you feel great by showing you have achieved a lot. 
 
-Currently it supports data from [[http://runkeeper.com/][RunKeeper]] and [[https://www.strava.com/dashboard][Strava]] perfectly.  =.GPX= format is generic data format so applying RExercise to data from other apps shuodn't be a problem.  If you do, please feel free to contact me, I am extermely friendly to people who do exercise (:d), or sent me a pull request if you already figure out. 
+Currently it parsing data from [[http://runkeeper.com/][RunKeeper]] and [[https://www.strava.com/dashboard][Strava]] perfectly.  =.GPX= format is generic data format so applying RExercise to data from other apps shuodn't be a problem.  If you do, please feel free to contact me, I am extermely friendly to people who do exercise (:d), or sent me a pull request if you already figure out. 
 
 ** Demo 
 
-suppose you have those =.GPX= data files, 
+Suppose you have those =.GPX= data files, 
 #+begin_example
 20150108-170830-Run.gpx 
 20150109-171835-Run.gpx 
@@ -25,7 +25,8 @@ suppose you have those =.GPX= data files,
 20150112-171906-Walk.gpx
 #+end_example
 
-=RExercise= will gives you
+RExercise will gives you
+
 #+begin_center
 *A Summary Table*
 #+end_center
@@ -65,11 +66,9 @@ devtools::install_github("yitang/rexercise")
 
 *Set working directory and app* 
 #+begin_src R
-all.data <-Parse_GPX_all(data.dir = "~/ExerciseData/Strave/",
+all.data <- Parse_GPX_all(data.dir = "~/ExerciseData/Strave/",
                          app = "Strava",
                          add.city = TRUE) 
 #+end_src
 
 You should have two tables as shown in Demo section. 
-
-
