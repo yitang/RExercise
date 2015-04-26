@@ -7,7 +7,7 @@ CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
 [2015-04-23 Thu 11:53]
 
 ** Welcome! 
-RExercise is a by-product of the Shiny ActivityDashboard. It parse your exercise data in =.GPX= format and for each workout, it returns 
+RExercise is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parse your exercise data in =.GPX= format and for each workout, it returns 
 - location table :: a =data.frame= with longitude, latitude, elevation at a particular recording time,
 - summary table :: a one-row =data.frame= of summary statistics about the workout, includes duration, distance, speed etc. 
 
@@ -53,20 +53,23 @@ suppose you have those =.GPX= data files,
 | -2.018090 | 53.962276 | 110.4 | 2015-01-11 11:38:35 |
 
 
-** How to use it.
+** Usage 
 
-*install* 
+*Install* 
+
 #+begin_src R
 devtools::install_github("yitang/rexercise")
 #+end_src
 
-*download GPX data*
+*Download GPX data*
 
-*set working idrecotry and app* 
+*Set working directory and app* 
 #+begin_src R
-all.data <-Parse_GPX_all(data.dir = "~/git/R/ActivityDashboard/ExerciseData/Strave/",
+all.data <-Parse_GPX_all(data.dir = "~/ExerciseData/Strave/",
                          app = "Strava",
                          add.city = TRUE) 
 #+end_src
+
+You should have two tables as shown in Demo section. 
 
 
