@@ -1,10 +1,10 @@
-* NEXT RExercise
+* DONE RExercise
+CLOSED: [2015-04-26 Sun 11:04]
 :LOGBOOK:  
 CLOCK: [2015-04-23 Thu 19:32]--[2015-04-23 Thu 20:22] =>  0:50
 CLOCK: [2015-04-23 Thu 12:11]--[2015-04-23 Thu 14:31] =>  2:20
 CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
 :END:      
-[2015-04-23 Thu 11:53]
 
 ** Welcome! 
 RExercise is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parse your exercise data in =.GPX= format and for each workout, it returns 
