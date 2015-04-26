@@ -5,9 +5,8 @@ CLOCK: [2015-04-23 Thu 19:32]--[2015-04-23 Thu 20:22] =>  0:50
 CLOCK: [2015-04-23 Thu 12:11]--[2015-04-23 Thu 14:31] =>  2:20
 CLOCK: [2015-04-23 Thu 11:53]--[2015-04-23 Thu 11:59] =>  0:06
 :END:      
-
 ** Welcome! 
-RExercise is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parses your exercise data in =.GPX= format and for each workout, it returns 
+[[https://github.com/yitang/RExercise][RExercise]] is a by-product of the [[http://54.187.77.47:3838][ActivityDashboard]]. It parses your exercise data in =.GPX= format and for each workout, it returns 
 - location table :: a =data.frame= with longitude, latitude, elevation at a particular recording time,
 - summary table :: a one-row =data.frame= of summary statistics about the workout, includes duration, distance, speed etc. 
 
@@ -25,11 +24,8 @@ Suppose you have those =.GPX= data files,
 20150112-171906-Walk.gpx
 #+end_example
 
-RExercise will gives you
+RExercise will gives you a location table and summary table as follows: 
 
-#+begin_center
-*A Summary Table*
-#+end_center
 
 #+caption: A Summary Table 
 |              id | activity |       date | start.time | name       | duration (h) | distance (km) | speed (km/h) | elevation (m) | climb (m) |
@@ -39,9 +35,6 @@ RExercise will gives you
 | 20150111-113750 | Run      | 2015-01-11 |   11:37:14 | Sunday     |         0.50 |          4.25 |          8.4 |         130.6 |     136.6 |
 | 20150112-171906 | Run      | 2015-01-12 |   17:19:14 | after work |         0.51 |          4.08 |          7.9 |         110.4 |      88.6 |
 
-#+begin_center
-*A Location Table*
-#+end_center
 #+caption: A Location Table
 |       lon |       lat |   ele | time                |
 |-----------+-----------+-------+---------------------|
@@ -56,15 +49,15 @@ RExercise will gives you
 
 ** Usage 
 
-*Install* 
+*1. Install* 
 
 #+begin_src R
 devtools::install_github("yitang/rexercise")
 #+end_src
 
-*Download GPX data*
+*2. Download GPX data*
 
-*Set working directory and app* 
+*3. Set working directory and app* 
 #+begin_src R
 all.data <- Parse_GPX_all(data.dir = "~/ExerciseData/Strave/",
                          app = "Strava",
